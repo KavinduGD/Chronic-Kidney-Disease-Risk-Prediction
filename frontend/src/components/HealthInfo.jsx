@@ -6,16 +6,20 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 
-function HealthInfo(
-  setAge,
-  setGender,
-  setDistrict,
-  age,
-  gender,
-  district,
-  page,
-  setPage
-) {
+function HealthInfo({
+  weight,
+  setWeight,
+  bloodPressure,
+  setBloodPressure,
+  diabetes,
+  setDiabetes,
+  longtermDisease,
+  setLongtermDisease,
+  antiBiotics,
+  setAntiBiotics,
+  ckd,
+  setCkd,
+}) {
   return (
     <div className="">
       <div className="bg-white pt-[14px] pb-[12px] pl-[20px] font-roboto border-[1px] border-[#DADCE0]  border-t-[10px] border-t-red-500 rounded-md ">
@@ -26,9 +30,9 @@ function HealthInfo(
         </p>
       </div>
       <div className="flex flex-col mt-[15px] font-roboto gap-[10px]">
-        {/* age */}
+        {/* Weight */}
         <div className="bg-white text-[#202124] pt-[20px] pb-[25px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[16px]  border-[1px] border-[#DADCE0]">
-          <p className="font-medium">Age</p>
+          <p className="font-medium">Weight</p>
           <div>
             <TextField
               id="filled-basic"
@@ -39,24 +43,25 @@ function HealthInfo(
               }}
               color="warning"
               type="number"
-              onChange={(e) => setAge(e.target.value)}
-              value={age === 0 ? "" : age}
+              onChange={(e) => setWeight(e.target.value)}
+              value={weight === 0 ? "" : weight}
             />
           </div>
         </div>
-        {/* Gender */}
+
+        {/* Blood presure */}
         <div className="bg-white text-[#202124] pt-[20px] pb-[15px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[16px]  border-[1px] border-[#DADCE0]">
-          <p className="font-medium">Gender</p>
+          <p className="font-medium">Do You Suffer From Blood Pressure?</p>
           <div>
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
               // defaultValue="female"
               name="radio-buttons-group"
-              onChange={(e) => setGender(e.target.value)}
-              value={gender}
+              onChange={(e) => setBloodPressure(e.target.value)}
+              value={bloodPressure}
             >
               <FormControlLabel
-                value="female"
+                value="high"
                 control={
                   <Radio
                     sx={{
@@ -65,10 +70,10 @@ function HealthInfo(
                     }}
                   />
                 }
-                label="Female"
+                label="High"
               />
               <FormControlLabel
-                value="male"
+                value="low"
                 control={
                   <Radio
                     sx={{
@@ -77,60 +82,188 @@ function HealthInfo(
                     }}
                   />
                 }
-                label="Male"
+                label="Low"
               />
             </RadioGroup>
           </div>
         </div>
-        {/* District */}
-        <div className="bg-white text-[#202124] pt-[20px] pb-[30px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[20px]  border-[1px] border-[#DADCE0]">
-          <p className="font-medium">District </p>
+
+        {/* Diabetes */}
+        <div className="bg-white text-[#202124] pt-[20px] pb-[15px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[16px]  border-[1px] border-[#DADCE0]">
+          <p className="font-medium">Do You Suffer From Diabetes?</p>
           <div>
-            <Select
-              labelId="demo-simple-select-filled-label"
-              id="demo-simple-select-filled"
-              //   value={age}
-              onChange={(e) => setDistrict(e.target.value)}
-              variant="standard"
-              sx={{ width: "100%" }}
-              color="warning"
-              value={district === "" ? "none" : district}
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              // defaultValue="female"
+              name="radio-buttons-group"
+              onChange={(e) => setDiabetes(e.target.value)}
+              value={diabetes}
             >
-              <MenuItem value="none">Select a District</MenuItem>
-              <MenuItem value="colombo">Colombo</MenuItem>
-              <MenuItem value="gampaha">Gampaha</MenuItem>
-              <MenuItem value="kalutara">Kalutara</MenuItem>
-              <MenuItem value="kandy">Kandy</MenuItem>
-              <MenuItem value="matale">Matale</MenuItem>
-              <MenuItem value="nuwara eliya">Nuwara Eliya</MenuItem>
-              <MenuItem value="galle">Galle</MenuItem>
-              <MenuItem value="matara">Matara</MenuItem>
-              <MenuItem value="hambantota">Hambantota</MenuItem>
-              <MenuItem value="jaffna">Jaffna</MenuItem>
-              <MenuItem value="kilinochchi">Kilinochchi</MenuItem>
-              <MenuItem value="mannar">Mannar</MenuItem>
-              <MenuItem value="vavuniya">Vavuniya</MenuItem>
-              <MenuItem value="mullaitivu">Mullaitivu</MenuItem>
-              <MenuItem value="batticaloa">Batticaloa</MenuItem>
-              <MenuItem value="ampara">Ampara</MenuItem>
-              <MenuItem value="trincomalee">Trincomalee</MenuItem>
-              <MenuItem value="kurunegala">Kurunegala</MenuItem>
-              <MenuItem value="puttalam">Puttalam</MenuItem>
-              <MenuItem value="anuradhapura">Anuradhapura</MenuItem>
-              <MenuItem value="polonnaruwa">Polonnaruwa</MenuItem>
-              <MenuItem value="badulla">Badulla</MenuItem>
-              <MenuItem value="moneragala">Moneragala</MenuItem>
-              <MenuItem value="ratnapura">Ratnapura</MenuItem>
-              <MenuItem value="kegalle">Kegalle</MenuItem>
-            </Select>
+              <FormControlLabel
+                value="high"
+                control={
+                  <Radio
+                    sx={{
+                      //   color: "#ff79b0",
+                      "&.Mui-checked": { color: "#ff4081" },
+                    }}
+                  />
+                }
+                label="High"
+              />
+              <FormControlLabel
+                value="low"
+                control={
+                  <Radio
+                    sx={{
+                      //   color: "#ff79b0",
+                      "&.Mui-checked": { color: "#ff4081" },
+                    }}
+                  />
+                }
+                label="Low"
+              />
+            </RadioGroup>
           </div>
         </div>
 
+        {/* Long term disease */}
+        <div className="bg-white text-[#202124] pt-[20px] pb-[15px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[16px]  border-[1px] border-[#DADCE0]">
+          <p className="font-medium">
+            Do You Take Long-Tern Medication For Any Disease?
+          </p>
+          <div>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              // defaultValue="female"
+              name="radio-buttons-group"
+              onChange={(e) => setLongtermDisease(e.target.value)}
+              value={longtermDisease}
+            >
+              <FormControlLabel
+                value="yes"
+                control={
+                  <Radio
+                    sx={{
+                      //   color: "#ff79b0",
+                      "&.Mui-checked": { color: "#ff4081" },
+                    }}
+                  />
+                }
+                label="Yes"
+              />
+              <FormControlLabel
+                value="no"
+                control={
+                  <Radio
+                    sx={{
+                      //   color: "#ff79b0",
+                      "&.Mui-checked": { color: "#ff4081" },
+                    }}
+                  />
+                }
+                label="no"
+              />
+            </RadioGroup>
+          </div>
+        </div>
+
+        {/* antibiotics */}
+        <div className="bg-white text-[#202124] pt-[20px] pb-[15px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[16px]  border-[1px] border-[#DADCE0]">
+          <p className="font-medium">
+            Do You Use Antibiotics For Any Condition In The Long Term?
+          </p>
+          <div>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              // defaultValue="female"
+              name="radio-buttons-group"
+              onChange={(e) => setAntiBiotics(e.target.value)}
+              value={antiBiotics}
+            >
+              <FormControlLabel
+                value="high"
+                control={
+                  <Radio
+                    sx={{
+                      //   color: "#ff79b0",
+                      "&.Mui-checked": { color: "#ff4081" },
+                    }}
+                  />
+                }
+                label="High"
+              />
+              <FormControlLabel
+                value="moderate"
+                control={
+                  <Radio
+                    sx={{
+                      //   color: "#ff79b0",
+                      "&.Mui-checked": { color: "#ff4081" },
+                    }}
+                  />
+                }
+                label="Moderate"
+              />
+              <FormControlLabel
+                value="low"
+                control={
+                  <Radio
+                    sx={{
+                      //   color: "#ff79b0",
+                      "&.Mui-checked": { color: "#ff4081" },
+                    }}
+                  />
+                }
+                label="Low"
+              />
+            </RadioGroup>
+          </div>
+        </div>
+
+        {/* ckd */}
+        <div className="bg-white text-[#202124] pt-[20px] pb-[15px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[16px]  border-[1px] border-[#DADCE0]">
+          <p className="font-medium">Do You Have A Family History of CKD?</p>
+          <div>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              // defaultValue="female"
+              name="radio-buttons-group"
+              onChange={(e) => setCkd(e.target.value)}
+              value={ckd}
+            >
+              <FormControlLabel
+                value="yes"
+                control={
+                  <Radio
+                    sx={{
+                      //   color: "#ff79b0",
+                      "&.Mui-checked": { color: "#ff4081" },
+                    }}
+                  />
+                }
+                label="Yes"
+              />
+              <FormControlLabel
+                value="no"
+                control={
+                  <Radio
+                    sx={{
+                      //   color: "#ff79b0",
+                      "&.Mui-checked": { color: "#ff4081" },
+                    }}
+                  />
+                }
+                label="no"
+              />
+            </RadioGroup>
+          </div>
+        </div>
         <div className="mb-[30px] ">
           <button
             className="py-[7px] px-[30px] bg-red-600 text-white rounded-md font-opensans font-semibold"
             onClick={() => {
-              if (age !== 0 && gender !== "" && district !== "") {
+              if (true) {
                 console.log("hit");
                 setPage(2);
               }
