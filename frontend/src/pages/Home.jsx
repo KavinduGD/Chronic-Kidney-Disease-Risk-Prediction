@@ -1,5 +1,5 @@
 import React from "react";
-import img from "./1.jpg";
+import img from "./2.jpg";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
@@ -14,7 +14,7 @@ function Home() {
         style={{ lineHeight: 1.3 }}
       >
         <p
-          className="font-roboto text-[70px] font-extrabold text-red-700 "
+          className="font-roboto text-[70px] font-extrabold text-red-600 "
           // style={{ textShadow: "1px 1px 3px red" }}
         >
           Chronic Kidney Disease Risk Prediction
