@@ -15,7 +15,7 @@ function Home() {
       >
         <p
           className="font-roboto text-[70px] font-extrabold text-red-700 "
-          style={{ textShadow: "1px 1px 3px red" }}
+          // style={{ textShadow: "1px 1px 3px red" }}
         >
           Chronic Kidney Disease Risk Prediction
         </p>
