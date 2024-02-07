@@ -2,6 +2,8 @@ import React from "react";
 import PersonalInfo from "../components/PersonalInfo";
 import { useState } from "react";
 import HealthInfo from "../components/HealthInfo";
+import LifestyleInfo from "../components/LifestyleInfo";
+import Result from "../components/Result";
 
 function Form() {
   // page
@@ -16,6 +18,13 @@ function Form() {
   const [longtermDisease, setLongtermDisease] = useState("");
   const [antiBiotics, setAntiBiotics] = useState("");
   const [ckd, setCkd] = useState("");
+  const [waterIntake, setWaterIntake] = useState(0);
+  const [weaterResourse, setWaterResourse] = useState("");
+  const [fertilizer, setFertilizer] = useState("");
+  const [alcohol, setAlcohol] = useState("");
+  const [tobacco, setTobacco] = useState("");
+  const [artificialBeverage, setArtificialBeverage] = useState("");
+  const [result, setResult] = useState("");
 
   return (
     <div className="bg-[#FDE2E0] min-h-screen">
@@ -51,8 +60,28 @@ function Form() {
                 setAntiBiotics={setAntiBiotics}
                 ckd={ckd}
                 setCkd={setCkd}
+                setPage={setPage}
               />
             )}
+            {page === 3 && (
+              <LifestyleInfo
+                setPage={setPage}
+                waterIntake={waterIntake}
+                setWaterIntake={setWaterIntake}
+                weaterResourse={weaterResourse}
+                setWaterResourse={setWaterResourse}
+                fertilizer={fertilizer}
+                setFertilizer={setFertilizer}
+                alcohol={alcohol}
+                setAlcohol={setAlcohol}
+                tobacco={tobacco}
+                setTobacco={setTobacco}
+                artificialBeverage={artificialBeverage}
+                setArtificialBeverage={setArtificialBeverage}
+              />
+            )}
+
+            {page === 4 && <Result />}
           </div>
         </div>
       </div>
