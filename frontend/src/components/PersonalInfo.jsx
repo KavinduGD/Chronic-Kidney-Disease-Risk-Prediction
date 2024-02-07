@@ -10,7 +10,16 @@ const normalInputStyle =
 const normalLabelStyle =
   "font-roboto text-[16px] font-semibold leading-[92%] text-[#383838]";
 
-function PersonalInfo() {
+function PersonalInfo({
+  setAge,
+  setGender,
+  setDistrict,
+  age,
+  gender,
+  district,
+  page,
+  setPage,
+}) {
   const [seatingCapacity, setSeatingCapacity] = React.useState(0);
 
   return (
@@ -23,6 +32,7 @@ function PersonalInfo() {
         </p>
       </div>
       <div className="flex flex-col mt-[15px] font-roboto gap-[10px]">
+        {/* age */}
         <div className="bg-white text-[#202124] pt-[20px] pb-[25px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[16px]  border-[1px] border-[#DADCE0]">
           <p className="font-medium">Age</p>
           <div>
@@ -34,16 +44,22 @@ function PersonalInfo() {
                 width: "100%",
               }}
               color="warning"
+              type="number"
+              onChange={(e) => setAge(e.target.value)}
+              value={age === 0 ? "" : age}
             />
           </div>
         </div>
+        {/* Gender */}
         <div className="bg-white text-[#202124] pt-[20px] pb-[15px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[16px]  border-[1px] border-[#DADCE0]">
           <p className="font-medium">Gender</p>
           <div>
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="female"
+              // defaultValue="female"
               name="radio-buttons-group"
+              onChange={(e) => setGender(e.target.value)}
+              value={gender}
             >
               <FormControlLabel
                 value="female"
@@ -72,6 +88,7 @@ function PersonalInfo() {
             </RadioGroup>
           </div>
         </div>
+        {/* District */}
         <div className="bg-white text-[#202124] pt-[20px] pb-[30px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[20px]  border-[1px] border-[#DADCE0]">
           <p className="font-medium">District </p>
           <div>
@@ -79,13 +96,13 @@ function PersonalInfo() {
               labelId="demo-simple-select-filled-label"
               id="demo-simple-select-filled"
               //   value={age}
-              //   onChange={handleChange}
+              onChange={(e) => setDistrict(e.target.value)}
               variant="standard"
               sx={{ width: "100%" }}
               color="warning"
-              value="a"
+              value={district === "" ? "none" : district}
             >
-              <MenuItem value="a">Select a District</MenuItem>
+              <MenuItem value="none">Select a District</MenuItem>
               <MenuItem value="colombo">Colombo</MenuItem>
               <MenuItem value="gampaha">Gampaha</MenuItem>
               <MenuItem value="kalutara">Kalutara</MenuItem>
@@ -113,6 +130,20 @@ function PersonalInfo() {
               <MenuItem value="kegalle">Kegalle</MenuItem>
             </Select>
           </div>
+        </div>
+
+        <div className="mb-[30px] ">
+          <button
+            className="py-[7px] px-[30px] bg-red-600 text-white rounded-md font-opensans font-semibold"
+            onClick={() => {
+              if (age !== 0 && gender !== "" && district !== "") {
+                console.log("hit");
+                setPage(2);
+              }
+            }}
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
