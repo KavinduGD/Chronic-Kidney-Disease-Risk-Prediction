@@ -10,11 +10,11 @@ function Home() {
       style={{ backgroundImage: `url(${img})` }}
     >
       <div
-        className="w-[550px] mr-[40px] mt-[50px] flex flex-col items-start justify-center"
+        className="w-[750px] mr-[0px] mt-[00px] flex flex-col items-start justify-center"
         style={{ lineHeight: 1.3 }}
       >
         <p
-          className="font-roboto text-[70px] font-extrabold text-red-600 "
+          className="font-roboto text-[65px] font-extrabold text-red-600 "
           // style={{ textShadow: "1px 1px 3px red" }}
         >
           Chronic Kidney Disease Risk Prediction
