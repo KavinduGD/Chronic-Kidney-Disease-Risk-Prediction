@@ -6,7 +6,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 
-function PersonalInfo({
+function HealthInfo(
   setAge,
   setGender,
   setDistrict,
@@ -14,14 +14,12 @@ function PersonalInfo({
   gender,
   district,
   page,
-  setPage,
-}) {
-  const [seatingCapacity, setSeatingCapacity] = React.useState(0);
-
+  setPage
+) {
   return (
     <div className="">
       <div className="bg-white pt-[14px] pb-[12px] pl-[20px] font-roboto border-[1px] border-[#DADCE0]  border-t-[10px] border-t-red-500 rounded-md ">
-        <p className="text-[36px] text-[#202124]">Personal Information</p>
+        <p className="text-[36px] text-[#202124]">Health Information</p>
         <p className="text-[#202132] text-[16px] mt-[3px]">
           Please fill your personal information below and use precise details
           when you fill the form.
@@ -146,4 +144,4 @@ function PersonalInfo({
   );
 }
 
-export default PersonalInfo;
+export default HealthInfo;

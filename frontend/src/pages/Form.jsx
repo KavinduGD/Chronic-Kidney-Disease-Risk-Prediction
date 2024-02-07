@@ -1,6 +1,7 @@
 import React from "react";
 import PersonalInfo from "../components/PersonalInfo";
 import { useState } from "react";
+import HealthInfo from "../components/HealthInfo";
 
 function Form() {
   // page
@@ -23,16 +24,30 @@ function Form() {
         </div>
         <div className="flex justify-center mt-[20px]">
           <div className="w-[65%]">
-            <PersonalInfo
-              setAge={setAge}
-              setGender={setGender}
-              setDistrict={setDistrict}
-              age={age}
-              gender={gender}
-              district={district}
-              page={page}
-              setPage={setPage}
-            />
+            {page === 1 && (
+              <PersonalInfo
+                setAge={setAge}
+                setGender={setGender}
+                setDistrict={setDistrict}
+                age={age}
+                gender={gender}
+                district={district}
+                page={page}
+                setPage={setPage}
+              />
+            )}
+            {page === 2 && (
+              <HealthInfo
+                setAge={setAge}
+                setGender={setGender}
+                setDistrict={setDistrict}
+                age={age}
+                gender={gender}
+                district={district}
+                page={page}
+                setPage={setPage}
+              />
+            )}
           </div>
         </div>
       </div>
