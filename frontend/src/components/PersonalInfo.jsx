@@ -72,7 +72,7 @@ function PersonalInfo() {
             </RadioGroup>
           </div>
         </div>
-        <div className="bg-white text-[#202124] pt-[20px] pb-[25px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[16px]  border-[1px] border-[#DADCE0]">
+        <div className="bg-white text-[#202124] pt-[20px] pb-[30px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[20px]  border-[1px] border-[#DADCE0]">
           <p className="font-medium">District </p>
           <div>
             <Select
@@ -80,14 +80,37 @@ function PersonalInfo() {
               id="demo-simple-select-filled"
               //   value={age}
               //   onChange={handleChange}
+              variant="standard"
               sx={{ width: "100%" }}
+              color="warning"
+              value="a"
             >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
+              <MenuItem value="a">Select a District</MenuItem>
               <MenuItem value="colombo">Colombo</MenuItem>
               <MenuItem value="gampaha">Gampaha</MenuItem>
-              <MenuItem value="kaluthara">Kaluthara</MenuItem>
+              <MenuItem value="kalutara">Kalutara</MenuItem>
+              <MenuItem value="kandy">Kandy</MenuItem>
+              <MenuItem value="matale">Matale</MenuItem>
+              <MenuItem value="nuwara eliya">Nuwara Eliya</MenuItem>
+              <MenuItem value="galle">Galle</MenuItem>
+              <MenuItem value="matara">Matara</MenuItem>
+              <MenuItem value="hambantota">Hambantota</MenuItem>
+              <MenuItem value="jaffna">Jaffna</MenuItem>
+              <MenuItem value="kilinochchi">Kilinochchi</MenuItem>
+              <MenuItem value="mannar">Mannar</MenuItem>
+              <MenuItem value="vavuniya">Vavuniya</MenuItem>
+              <MenuItem value="mullaitivu">Mullaitivu</MenuItem>
+              <MenuItem value="batticaloa">Batticaloa</MenuItem>
+              <MenuItem value="ampara">Ampara</MenuItem>
+              <MenuItem value="trincomalee">Trincomalee</MenuItem>
+              <MenuItem value="kurunegala">Kurunegala</MenuItem>
+              <MenuItem value="puttalam">Puttalam</MenuItem>
+              <MenuItem value="anuradhapura">Anuradhapura</MenuItem>
+              <MenuItem value="polonnaruwa">Polonnaruwa</MenuItem>
+              <MenuItem value="badulla">Badulla</MenuItem>
+              <MenuItem value="moneragala">Moneragala</MenuItem>
+              <MenuItem value="ratnapura">Ratnapura</MenuItem>
+              <MenuItem value="kegalle">Kegalle</MenuItem>
             </Select>
           </div>
         </div>

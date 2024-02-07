@@ -10,7 +10,7 @@ function Home() {
       style={{ backgroundImage: `url(${img})` }}
     >
       <div
-        className="w-[550px] mr-[40px] mt-[50px] flex flex-col items-start "
+        className="w-[550px] mr-[40px] mt-[50px] flex flex-col items-start justify-center"
         style={{ lineHeight: 1.3 }}
       >
         <p
@@ -20,7 +20,7 @@ function Home() {
           Chronic Kidney Disease Risk Prediction
         </p>
         <button
-          className="mt-[140px] py-[20px] px-[40px] text-[16px] font-poppins text-white bg-red-600 rounded-lg font-medium "
+          className="mt-[50px] py-[20px] px-[40px] text-[16px] font-poppins text-white bg-red-600 rounded-lg font-medium "
           onClick={() => {
             navigate("/form");
           }}
