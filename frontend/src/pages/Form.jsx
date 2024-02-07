@@ -26,6 +26,10 @@ function Form() {
   const [artificialBeverage, setArtificialBeverage] = useState("");
   const [result, setResult] = useState("");
 
+  const submit = (e) => {
+    console.log("submit");
+  };
+
   return (
     <div className="bg-[#FDE2E0] min-h-screen">
       <div>
