@@ -367,9 +367,12 @@ function Result({
           <p className="text-[34px] font-mono font-semibold underline mt-[30px]">
             Experts Advice
           </p>
-          <ol className="list-decimal pl-[40px]" style={{ lineHeight: 1.3 }}>
+          <ol
+            className="list-decimal pl-[40px] mb-[50px]"
+            style={{ lineHeight: 1.3 }}
+          >
             {weight > 80 && (
-              <li className="text-[18px] font-roboto font-normal">
+              <li className="text-[17px] font-roboto font-normal">
                 Try to maintain healthy body weight, consult a healthcare
                 professional, adopt a balanced and nutritious diet plan, engage
                 in regular physical activities.
