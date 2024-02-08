@@ -380,136 +380,140 @@ function Result({
                 </div>
               </div>
               {/* Expert Advice */}
-              <div>
-                <p className="text-[34px] font-mono font-semibold underline mt-[30px]">
-                  Expert Advice
-                </p>
-                <div className="pl-[40px]">
-                  <p className="font-roboto text-[18px]">
-                    1.Do this reccomended tests
+              {result === "high" && (
+                <div>
+                  <p className="text-[34px] font-mono font-semibold underline mt-[30px]">
+                    Expert Advice
                   </p>
-                  <div className="flex mt-[5px]">
-                    <div className="flex-1 flex flex-col ">
-                      <p className="text-[20px] font-poppins font-semibold text-gray-700">
-                        Blood tests
-                      </p>
-                      <ul
-                        className="list-disc pl-[40px] "
-                        style={{ lineHeight: 1.3 }}
-                      >
-                        <li className="text-[15px] font-roboto font-medium">
-                          Serum Creatinine
-                        </li>
-                        <li className="text-[15px] font-roboto font-medium">
-                          Blood Urea Nitrogen (BUN)
-                        </li>
-                        <li className="text-[15px] font-roboto font-medium">
-                          Estimated Glomerular Filtration Rate
-                        </li>
-                        <li className="text-[15px] font-roboto font-medium">
-                          Electrolyte Levels
-                        </li>
-                      </ul>
+                  <div className="pl-[40px]">
+                    <p className="font-roboto text-[18px]">
+                      1.Do this reccomended tests
+                    </p>
+                    <div className="flex mt-[5px]">
+                      <div className="flex-1 flex flex-col ">
+                        <p className="text-[20px] font-poppins font-semibold text-gray-700">
+                          Blood tests
+                        </p>
+                        <ul
+                          className="list-disc pl-[40px] "
+                          style={{ lineHeight: 1.3 }}
+                        >
+                          <li className="text-[15px] font-roboto font-medium">
+                            Serum Creatinine
+                          </li>
+                          <li className="text-[15px] font-roboto font-medium">
+                            Blood Urea Nitrogen (BUN)
+                          </li>
+                          <li className="text-[15px] font-roboto font-medium">
+                            Estimated Glomerular Filtration Rate
+                          </li>
+                          <li className="text-[15px] font-roboto font-medium">
+                            Electrolyte Levels
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="flex-1 flex flex-col">
+                        <p className="text-[20px] font-poppins font-semibold text-gray-700">
+                          Urine tests
+                        </p>
+                        <ul
+                          className="list-disc pl-[40px] "
+                          style={{ lineHeight: 1.3 }}
+                        >
+                          <li className="text-[15px] font-roboto font-medium">
+                            Urinalysis
+                          </li>
+                          <li className="text-[15px] font-roboto font-medium">
+                            Urine Albumin-to-Creatinine Ratio (ACR)
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="flex-1 flex flex-col">
+                        <p className="text-[20px] font-poppins font-semibold text-gray-700">
+                          Imaging tests
+                        </p>
+                        <ul
+                          className="list-disc pl-[40px] mb-[50px]"
+                          style={{ lineHeight: 1.3 }}
+                        >
+                          <li className="text-[15px] font-roboto font-medium">
+                            Ultrasound
+                          </li>
+                          <li className="text-[15px] font-roboto font-medium">
+                            CT Scan
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                    <div className="flex-1 flex flex-col">
-                      <p className="text-[20px] font-poppins font-semibold text-gray-700">
-                        Urine tests
-                      </p>
-                      <ul
-                        className="list-disc pl-[40px] "
-                        style={{ lineHeight: 1.3 }}
-                      >
-                        <li className="text-[15px] font-roboto font-medium">
-                          Urinalysis
-                        </li>
-                        <li className="text-[15px] font-roboto font-medium">
-                          Urine Albumin-to-Creatinine Ratio (ACR)
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="flex-1 flex flex-col">
-                      <p className="text-[20px] font-poppins font-semibold text-gray-700">
-                        Imaging tests
-                      </p>
-                      <ul
-                        className="list-disc pl-[40px] mb-[50px]"
-                        style={{ lineHeight: 1.3 }}
-                      >
-                        <li className="text-[15px] font-roboto font-medium">
-                          Ultrasound
-                        </li>
-                        <li className="text-[15px] font-roboto font-medium">
-                          CT Scan
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
 
-                  <p className="font-roboto text-[18px] ">
-                    2.Consult with the following healthcare professionals
-                  </p>
-                  <div>
-                    <ul className="list-disc pl-[40px] ">
+                    <p className="font-roboto text-[18px] ">
+                      2.Consult with the following healthcare professionals
+                    </p>
+                    <div>
+                      <ul className="list-disc pl-[40px] ">
+                        <li className="text-[15px] font-roboto font-medium">
+                          Primary Care Physician (PCP): Your primary care
+                          physician serves as the first point of contact for
+                          your healthcare needs.
+                        </li>
+                        <li className="text-[15px] font-roboto font-medium">
+                          Nephrologist: A nephrologist is a doctor who
+                          specializes in diagnosing and treating kidney
+                          diseases.
+                        </li>
+                        <li className="text-[15px] font-roboto font-medium">
+                          Registered Dietitian: A registered dietitian who
+                          specializes in kidney disease can provide valuable
+                          guidance on managing your diet to support kidney
+                          health.
+                        </li>
+                        <li className="text-[15px] font-roboto font-medium">
+                          Urologist: Urologists specialize in the urinary
+                          system, including the kidneys.
+                        </li>
+                      </ul>
+                    </div>
+                    <p className="font-roboto text-[18px] mt-[5px]">
+                      3.Inappropriate food and drink
+                    </p>
+                    <ul
+                      className="list-disc pl-[40px] mb-[50px]"
+                      style={{ lineHeight: 1.3 }}
+                    >
                       <li className="text-[15px] font-roboto font-medium">
-                        Primary Care Physician (PCP): Your primary care
-                        physician serves as the first point of contact for your
-                        healthcare needs.
+                        High-sodium foods: Avoid or limit high-sodium foods such
+                        as processed meats, canned soups, fast food, chips, and
+                        salted snacks.
                       </li>
                       <li className="text-[15px] font-roboto font-medium">
-                        Nephrologist: A nephrologist is a doctor who specializes
-                        in diagnosing and treating kidney diseases.
+                        High-potassium foods: Limit or avoid high-potassium
+                        foods such as bananas, oranges, potatoes, tomatoes,
+                        avocados, and certain legumes.
                       </li>
                       <li className="text-[15px] font-roboto font-medium">
-                        Registered Dietitian: A registered dietitian who
-                        specializes in kidney disease can provide valuable
-                        guidance on managing your diet to support kidney health.
+                        High-phosphorus foods: Limit foods high in phosphorus,
+                        including dairy products, nuts, seeds, whole grains, and
+                        processed foods with phosphate additives.
                       </li>
                       <li className="text-[15px] font-roboto font-medium">
-                        Urologist: Urologists specialize in the urinary system,
-                        including the kidneys.
+                        Foods high in protein: Limit consumption of red meat,
+                        poultry, fish, and dairy products.
+                      </li>
+                      <li className="text-[15px] font-roboto font-medium">
+                        Fluid restrictions: In advanced stages of kidney
+                        disease, fluid intake may need to be limited to prevent
+                        fluid overload and swelling.
+                      </li>
+                      <li className="text-[15px] font-roboto font-medium">
+                        Carbonated beverages and sugary drinks
+                      </li>
+                      <li className="text-[15px] font-roboto font-medium">
+                        Alcohol
                       </li>
                     </ul>
                   </div>
-                  <p className="font-roboto text-[18px] mt-[5px]">
-                    3.Inappropriate food and drink
-                  </p>
-                  <ul
-                    className="list-disc pl-[40px] mb-[50px]"
-                    style={{ lineHeight: 1.3 }}
-                  >
-                    <li className="text-[15px] font-roboto font-medium">
-                      High-sodium foods: Avoid or limit high-sodium foods such
-                      as processed meats, canned soups, fast food, chips, and
-                      salted snacks.
-                    </li>
-                    <li className="text-[15px] font-roboto font-medium">
-                      High-potassium foods: Limit or avoid high-potassium foods
-                      such as bananas, oranges, potatoes, tomatoes, avocados,
-                      and certain legumes.
-                    </li>
-                    <li className="text-[15px] font-roboto font-medium">
-                      High-phosphorus foods: Limit foods high in phosphorus,
-                      including dairy products, nuts, seeds, whole grains, and
-                      processed foods with phosphate additives.
-                    </li>
-                    <li className="text-[15px] font-roboto font-medium">
-                      Foods high in protein: Limit consumption of red meat,
-                      poultry, fish, and dairy products.
-                    </li>
-                    <li className="text-[15px] font-roboto font-medium">
-                      Fluid restrictions: In advanced stages of kidney disease,
-                      fluid intake may need to be limited to prevent fluid
-                      overload and swelling.
-                    </li>
-                    <li className="text-[15px] font-roboto font-medium">
-                      Carbonated beverages and sugary drinks
-                    </li>
-                    <li className="text-[15px] font-roboto font-medium">
-                      Alcohol
-                    </li>
-                  </ul>
                 </div>
-              </div>
+              )}
               {/* genaral Advice */}
               <div>
                 <p className="text-[34px] font-mono font-semibold underline mt-[30px]">
