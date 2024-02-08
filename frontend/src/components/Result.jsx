@@ -363,9 +363,109 @@ function Result({
             </div>
           </PDFExport>
         </div>
+        <div>
+          <p className="text-[34px] font-mono font-semibold underline mt-[30px]">
+            Experts Advice
+          </p>
+          <ol className="list-decimal pl-[40px]" style={{ lineHeight: 1.3 }}>
+            {weight > 80 && (
+              <li className="text-[18px] font-roboto font-normal">
+                Try to maintain healthy body weight, consult a healthcare
+                professional, adopt a balanced and nutritious diet plan, engage
+                in regular physical activities.
+              </li>
+            )}
+            {ckd === "Yes" && (
+              <li className="text-[18px] font-roboto font-normal">
+                When considering your family background, it is important to take
+                proactive steps to maintain your kidney health.
+              </li>
+            )}
+            {waterIntake < 2.7 && gender === "female" && (
+              <li className="text-[18px] font-roboto font-normal">
+                The recommended daily water intake is 2.7 liters.
+              </li>
+            )}
+            {waterIntake < 3.7 && gender === "male" && (
+              <li className="text-[18px] font-roboto font-normal">
+                The recommended daily water intake is 3.7 liters.
+              </li>
+            )}
+            {(bloodPressure === "high" || diabetes === "high") && (
+              <li className="text-[18px] font-roboto font-normal">
+                Consult a healthcare professional (Blood pressure/Diabetes),
+                reduce stress, maintain a healthy weight, follow a healthy diet,
+                regular check-ups, take prescribed medication as directed.
+              </li>
+            )}
+            {(longtermDisease === "yes" || antiBiotics === "high") && (
+              <li className="text-[18px] font-roboto font-normal">
+                Limit sodium intake, monitor and control your blood pressure and
+                blood sugar, maintain a healthy lifestyle, avoid nephrotoxic
+                substances, stay hydrated, do blood test every three months
+                (Serum Creatinine, Blood Urea Nitrogen (BUN), Estimated
+                Glomerular Filtration Rate (eGFR)).
+              </li>
+            )}
+            {alcohol === "yes" && (
+              <li className="text-[18px] font-roboto font-normal">
+                Quit the alcohol at all.
+              </li>
+            )}
+            {tobacco === "yes" && (
+              <li className="text-[18px] font-roboto font-normal">
+                Quit smoking at all.
+              </li>
+            )}
+            {(weaterResourse === "tank" ||
+              weaterResourse === "well water" ||
+              weaterResourse === "river") && (
+              <li className="text-[18px] font-roboto font-normal">
+                When drinking water, filter it or use well-heated and filtered
+                water.
+              </li>
+            )}
+            {fertilizer === "high" && (
+              <li className="text-[18px] font-roboto font-normal">
+                Follow safety practices when exposure to inorganic fertilizers,
+                pesticides, and weedicides.
+              </li>
+            )}
+          </ol>
+        </div>
       </div>
     </div>
   );
 }
 
 export default Result;
+
+// weight > 80
+// 	"Try to maintain healthy body weight, consult a healthcare professional, adopt a balanced and nutritious diate plan, engage in regular physical activities."
+
+// Family History of CKD == "Yes"
+// 	"When considering your family background, it is important to take proactive steps to maintain your kidney health."
+
+// Water intake < 2.7 and gender == "Female"
+// 	"The recommended daily water intake is 2.7 liters."
+
+// Water intake < 3.7 and gender == "Male"
+// 	"The recommended daily water intake is 3.7 liters."
+
+// Blood pressure == "High" or Diabetes == "High"
+// 	"Consult a healthcare professional(Blood pressure/Diabetes), reduce stress, maintain a healthy weight, follow a healthy diet, regular check-ups, take prescribed medication as directed."
+
+// Medications for diabetes/blood pressure == "Yes" or Antibiotic Consumption == "High"
+// 	"Limit sodium intake, monitor and control your blood pressure and blood sugar, maintain a healthy lifestyle, avoid nephrotoxic substances, stay hydrated, do blood test every three months(Serum Creatinine, Blood Urea Nitrogen (BUN), Estimated Glomerular Filtration Rate (eGFR))."
+
+// Alchohol consumption == "Yes"
+// 	"Quit the alcohol at all."
+
+// tobacco consumption == "Yes"
+// 	"Quit smoking at all."
+
+// Water resource == "Tank" or "Well water" or "river"
+// 	"When drinking water, filter it or use well-heated and filtered water."
+
+// Fertilizer == "High" or "Low"
+// 	"Follow safety practices when exposure to inorganic fertilizers, pesticides and weedicides."
