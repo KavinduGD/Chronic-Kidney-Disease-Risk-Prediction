@@ -150,14 +150,45 @@ function Result({
                 </div>
                 <hr className="h-[1px]  border-black" />
                 <div className="px-[50px] py-[20px]">
-                  <div className="flex gap-[30px]">
-                    <p className="font-poppins font-semibold text-[18px]">
-                      Person's Name
-                    </p>
-                    <p className="font-bold text-[18px]">-</p>
-                    <p className="font-roboto font-normal text-[18px]">
-                      {name}
-                    </p>
+                  <div className="helth"></div>
+                  <p>{result}</p>
+                  <div className="details">
+                    <div className="flex gap-[30px]">
+                      <p className="font-poppins font-semibold text-[18px]">
+                        Person's Name
+                      </p>
+                      <p className="font-bold text-[18px]">-</p>
+                      <p className="font-roboto font-normal text-[18px]">
+                        {name}
+                      </p>
+                    </div>
+                    <div className="flex gap-[30px]">
+                      <p className="font-poppins font-semibold text-[18px]">
+                        Age
+                      </p>
+                      <p className="font-bold text-[18px]">-</p>
+                      <p className="font-roboto font-normal text-[18px]">
+                        {age}
+                      </p>
+                    </div>
+                    <div className="flex gap-[30px]">
+                      <p className="font-poppins font-semibold text-[18px]">
+                        Gender
+                      </p>
+                      <p className="font-bold text-[18px]">-</p>
+                      <p className="font-roboto font-normal text-[18px]">
+                        {gender}
+                      </p>
+                    </div>
+                    <div className="flex gap-[30px]">
+                      <p className="font-poppins font-semibold text-[18px]">
+                        District
+                      </p>
+                      <p className="font-bold text-[18px]">-</p>
+                      <p className="font-roboto font-normal text-[18px]">
+                        {district}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -7,7 +7,7 @@ import Result from "../components/Result";
 
 function Form() {
   // page
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(4);
   // values
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState("");
