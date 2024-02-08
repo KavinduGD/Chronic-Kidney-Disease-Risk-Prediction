@@ -69,7 +69,7 @@ function Result({
           "Water resource": [weaterResourse],
           "Usage of Artificial beverages": [artificialBeverage],
           "Antibiotic Consumption": [antiBiotics],
-          Fertilizer: [fertilizer === "no" ? "No" : fertilizer],
+          Fertilizer: [fertilizer],
         },
         {
           headers: {
