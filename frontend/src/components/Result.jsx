@@ -103,6 +103,7 @@ function Result({
     Fertilizer: [fertilizer],
   });
 
+  // console.log(result);
   return (
     <div className=" font-roboto">
       <div className="pr-[30px] bg-white pt-[14px] pb-[12px] pl-[20px] font-roboto border-[1px] border-[#DADCE0]  border-t-[10px] border-t-red-500 rounded-md ">
