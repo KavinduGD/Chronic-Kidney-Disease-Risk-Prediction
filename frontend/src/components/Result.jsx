@@ -97,6 +97,10 @@ function Result({
     "Antibiotic Consumption": [antiBiotics],
     Fertilizer: [fertilizer],
   });
+  const capitalizeFirstLetter = (string) => {
+    if (!string) return "";
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  };
 
   return (
     <div className=" font-roboto">
@@ -150,45 +154,209 @@ function Result({
                 </div>
                 <hr className="h-[1px]  border-black" />
                 <div className="px-[50px] py-[20px]">
-                  <div className="helth"></div>
-                  <p>{result}</p>
-                  <div className="details">
-                    <div className="flex gap-[30px]">
-                      <p className="font-poppins font-semibold text-[18px]">
-                        Person's Name
-                      </p>
-                      <p className="font-bold text-[18px]">-</p>
-                      <p className="font-roboto font-normal text-[18px]">
-                        {name}
-                      </p>
+                  <div className="personal">
+                    <p className="text-[34px] font-mono font-semibold underline">
+                      Personal Information
+                    </p>
+                    {/* perosnal */}
+                    <div className="personal details">
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[200px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Person's Name
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {name == ""
+                            ? "- - - Please Enter a Name - - -"
+                            : name}
+                        </p>
+                      </div>
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[299px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Age
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {age} years
+                        </p>
+                      </div>
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[268px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Gender
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {capitalizeFirstLetter(gender)}
+                        </p>
+                      </div>
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[270px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            District
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {capitalizeFirstLetter(district)}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex gap-[30px]">
-                      <p className="font-poppins font-semibold text-[18px]">
-                        Age
-                      </p>
-                      <p className="font-bold text-[18px]">-</p>
-                      <p className="font-roboto font-normal text-[18px]">
-                        {age}
-                      </p>
+                  </div>
+                  {/* health */}
+                  <div className="health mt-[15px]">
+                    <p className="text-[34px] font-mono font-semibold underline">
+                      Health Information
+                    </p>
+                    <div className="personal details">
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[268px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Weight
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {weight} kg
+                        </p>
+                      </div>
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[200px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Blood Pressure
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {capitalizeFirstLetter(bloodPressure)}
+                        </p>
+                      </div>
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[254px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Diabetes
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {capitalizeFirstLetter(diabetes)}
+                        </p>
+                      </div>
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[133px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Long-Tern Medication
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {capitalizeFirstLetter(longtermDisease)}
+                        </p>
+                      </div>
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[205px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            History of CKD
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {capitalizeFirstLetter(ckd)}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex gap-[30px]">
-                      <p className="font-poppins font-semibold text-[18px]">
-                        Gender
-                      </p>
-                      <p className="font-bold text-[18px]">-</p>
-                      <p className="font-roboto font-normal text-[18px]">
-                        {gender}
-                      </p>
+                  </div>
+                  {/* Lifestyle Information */}
+                  <div className="lifestyle mt-[15px]">
+                    <p className="text-[34px] font-mono font-semibold underline">
+                      Lifestyle Information
+                    </p>
+                    <div className="personal details">
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[135px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Average Water Intake
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {waterIntake} L
+                        </p>
+                      </div>
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[140px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Main Water Resource
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {capitalizeFirstLetter(weaterResourse)}
+                        </p>
+                      </div>
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[163px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Inoganic Fertilizers
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {capitalizeFirstLetter(fertilizer)}
+                        </p>
+                      </div>
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[136px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Alcohol Consumption
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {capitalizeFirstLetter(alcohol)}
+                        </p>
+                      </div>
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[125px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Tobacco Consumption
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {capitalizeFirstLetter(tobacco)}
+                        </p>
+                      </div>
+                      <div className="flex gap-[40px]">
+                        <div className="flex gap-[36px]">
+                          <p className="font-poppins font-semibold text-[18px]">
+                            Artificial Beverage Consumption
+                          </p>
+                          <p className="font-bold text-[18px]">-</p>
+                        </div>
+                        <p className="font-roboto font-normal text-[18px]">
+                          {capitalizeFirstLetter(artificialBeverage)}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex gap-[30px]">
-                      <p className="font-poppins font-semibold text-[18px]">
-                        District
-                      </p>
-                      <p className="font-bold text-[18px]">-</p>
-                      <p className="font-roboto font-normal text-[18px]">
-                        {district}
-                      </p>
-                    </div>
+                  </div>
+                  <div
+                    className={`flex gap-[30px] mt-[30px] ${
+                      result ? "text-red-600" : "text-green-700"
+                    }`}
+                  >
+                    <p className="text-[30px] font-mono font-bold ">
+                      Test Result
+                    </p>
+                    <p className="text-[30px] font-mono font-bold">-</p>
+                    <p className="text-[30px] font-mono font-extrabold">
+                      {result}
+                    </p>
                   </div>
                 </div>
               </div>

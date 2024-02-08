@@ -167,7 +167,7 @@ function LifestyleInfo({
 
         {/* alcohol */}
         <div className="bg-white text-[#202124] pt-[20px] pb-[15px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[16px]  border-[1px] border-[#DADCE0]">
-          <p className="font-medium">Alcohol Consuption</p>
+          <p className="font-medium">Alcohol Consumption</p>
           <div>
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
@@ -206,7 +206,7 @@ function LifestyleInfo({
 
         {/* tobacco */}
         <div className="bg-white text-[#202124] pt-[20px] pb-[15px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[16px]  border-[1px] border-[#DADCE0]">
-          <p className="font-medium">Tobacco Consuption</p>
+          <p className="font-medium">Tobacco Consumption</p>
           <div>
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
@@ -245,7 +245,7 @@ function LifestyleInfo({
 
         {/* baverage */}
         <div className="bg-white text-[#202124] pt-[20px] pb-[15px] pl-[20px] pr-[20px] rounded-lg flex flex-col  gap-[16px]  border-[1px] border-[#DADCE0]">
-          <p className="font-medium">Artificial Beverage Consuption</p>
+          <p className="font-medium">Artificial Beverage Consumption</p>
           <div>
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
