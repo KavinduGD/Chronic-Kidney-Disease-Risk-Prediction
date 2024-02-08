@@ -148,6 +148,18 @@ function Result({
                     Risk Prediction Report
                   </p>
                 </div>
+                <hr className="h-[1px]  border-black" />
+                <div className="px-[50px] py-[20px]">
+                  <div className="flex gap-[30px]">
+                    <p className="font-poppins font-semibold text-[18px]">
+                      Person's Name
+                    </p>
+                    <p className="font-bold text-[18px]">-</p>
+                    <p className="font-roboto font-normal text-[18px]">
+                      {name}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </PDFExport>
