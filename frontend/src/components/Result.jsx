@@ -349,7 +349,7 @@ function Result({
                   </div>
                   <div
                     className={`flex gap-[30px] mt-[30px] ${
-                      result ? "text-red-600" : "text-green-700"
+                      result == "high" ? "text-red-600" : "text-green-700"
                     }`}
                   >
                     <p className="text-[30px] font-mono font-bold ">
@@ -357,7 +357,7 @@ function Result({
                     </p>
                     <p className="text-[30px] font-mono font-bold">-</p>
                     <p className="text-[30px] font-mono font-extrabold">
-                      {result}
+                      {capitalizeFirstLetter(result)}
                     </p>
                   </div>
                 </div>
