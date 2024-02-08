@@ -7,7 +7,7 @@ import Result from "../components/Result";
 
 function Form() {
   // page
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(4);
   // values
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState("");
@@ -34,7 +34,11 @@ function Form() {
     <div className="bg-[#FDE2E0] min-h-screen">
       <div>
         <div className="w-full bg-white flex justify-center items-center font-roboto text-[30px] py-[15px] ">
-          <p>Please Fill Below Information</p>
+          {page === 4 ? (
+            <p>Download Your Report</p>
+          ) : (
+            <p>Please Fill Below Information</p>
+          )}
         </div>
         <div className="flex justify-center mt-[20px]">
           <div className="w-[65%]">
@@ -85,7 +89,27 @@ function Form() {
               />
             )}
 
-            {page === 4 && <Result />}
+            {page === 4 && (
+              <Result
+                age={age}
+                gender={gender}
+                district={district}
+                weight={weight}
+                bloodPressure={bloodPressure}
+                diabetes={diabetes}
+                longtermDisease={longtermDisease}
+                antiBiotics={antiBiotics}
+                ckd={ckd}
+                waterIntake={waterIntake}
+                weaterResourse={weaterResourse}
+                fertilizer={fertilizer}
+                alcohol={alcohol}
+                tobacco={tobacco}
+                artificialBeverage={artificialBeverage}
+                result={result}
+                setResult={setResult}
+              />
+            )}
           </div>
         </div>
       </div>

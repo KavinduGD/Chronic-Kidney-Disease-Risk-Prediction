@@ -61,7 +61,7 @@ function LifestyleInfo({
               value={weaterResourse}
             >
               <FormControlLabel
-                value="wellwater"
+                value="well water"
                 control={
                   <Radio
                     sx={{
@@ -73,7 +73,7 @@ function LifestyleInfo({
                 label="Well Water"
               />
               <FormControlLabel
-                value="tapwater"
+                value="tap water"
                 control={
                   <Radio
                     sx={{
