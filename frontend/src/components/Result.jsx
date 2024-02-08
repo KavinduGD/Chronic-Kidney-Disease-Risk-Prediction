@@ -3,6 +3,8 @@ import axios from "axios";
 import TextField from "@mui/material/TextField";
 import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
 import logo from "./logo.png";
+import waringImg from "./warning.png";
+import pass from "./pass.png";
 
 const exportPDFWithMethod = () => {
   let element = container.current || document.body;
@@ -29,6 +31,7 @@ function Result({
   alcohol,
   tobacco,
   artificialBeverage,
+  setColor,
 }) {
   const [result, setResult] = useState("");
   const [name, setname] = useState("");
@@ -79,6 +82,12 @@ function Result({
       );
 
       setResult(response.data);
+
+      if (response.data === "high") {
+        setColor("#f22952");
+      } else {
+        setColor("#50C878");
+      }
     };
 
     handleResult();
@@ -350,21 +359,161 @@ function Result({
                   <div
                     className={`flex gap-[30px] mt-[30px] ${
                       result == "high" ? "text-red-600" : "text-green-700"
-                    }`}
+                    } items-center`}
                   >
                     <p className="text-[30px] font-mono font-bold ">
                       Test Result
                     </p>
                     <p className="text-[30px] font-mono font-bold">-</p>
-                    <p className="text-[30px] font-mono font-extrabold">
-                      {capitalizeFirstLetter(result)}
-                    </p>
+                    <div className="flex items-center gap-[180px]">
+                      <p className="text-[30px] font-mono font-extrabold">
+                        {capitalizeFirstLetter(result)}
+                      </p>
+                      <img
+                        src={result === "high" ? waringImg : pass}
+                        className={
+                          result === "high" ? "w-[300px]" : "w-[200px]"
+                        }
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
+              {/* Expert Advice */}
               <div>
                 <p className="text-[34px] font-mono font-semibold underline mt-[30px]">
-                  Experts Advice
+                  Expert Advice
+                </p>
+                <div className="pl-[40px]">
+                  <p className="font-roboto text-[18px]">
+                    1.Do this reccomended tests
+                  </p>
+                  <div className="flex mt-[5px]">
+                    <div className="flex-1 flex flex-col ">
+                      <p className="text-[20px] font-poppins font-semibold text-gray-700">
+                        Blood tests
+                      </p>
+                      <ul
+                        className="list-disc pl-[40px] "
+                        style={{ lineHeight: 1.3 }}
+                      >
+                        <li className="text-[15px] font-roboto font-medium">
+                          Serum Creatinine
+                        </li>
+                        <li className="text-[15px] font-roboto font-medium">
+                          Blood Urea Nitrogen (BUN)
+                        </li>
+                        <li className="text-[15px] font-roboto font-medium">
+                          Estimated Glomerular Filtration Rate
+                        </li>
+                        <li className="text-[15px] font-roboto font-medium">
+                          Electrolyte Levels
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="flex-1 flex flex-col">
+                      <p className="text-[20px] font-poppins font-semibold text-gray-700">
+                        Urine tests
+                      </p>
+                      <ul
+                        className="list-disc pl-[40px] "
+                        style={{ lineHeight: 1.3 }}
+                      >
+                        <li className="text-[15px] font-roboto font-medium">
+                          Urinalysis
+                        </li>
+                        <li className="text-[15px] font-roboto font-medium">
+                          Urine Albumin-to-Creatinine Ratio (ACR)
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="flex-1 flex flex-col">
+                      <p className="text-[20px] font-poppins font-semibold text-gray-700">
+                        Imaging tests
+                      </p>
+                      <ul
+                        className="list-disc pl-[40px] mb-[50px]"
+                        style={{ lineHeight: 1.3 }}
+                      >
+                        <li className="text-[15px] font-roboto font-medium">
+                          Ultrasound
+                        </li>
+                        <li className="text-[15px] font-roboto font-medium">
+                          CT Scan
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <p className="font-roboto text-[18px] ">
+                    2.Consult with the following healthcare professionals
+                  </p>
+                  <div>
+                    <ul className="list-disc pl-[40px] ">
+                      <li className="text-[15px] font-roboto font-medium">
+                        Primary Care Physician (PCP): Your primary care
+                        physician serves as the first point of contact for your
+                        healthcare needs.
+                      </li>
+                      <li className="text-[15px] font-roboto font-medium">
+                        Nephrologist: A nephrologist is a doctor who specializes
+                        in diagnosing and treating kidney diseases.
+                      </li>
+                      <li className="text-[15px] font-roboto font-medium">
+                        Registered Dietitian: A registered dietitian who
+                        specializes in kidney disease can provide valuable
+                        guidance on managing your diet to support kidney health.
+                      </li>
+                      <li className="text-[15px] font-roboto font-medium">
+                        Urologist: Urologists specialize in the urinary system,
+                        including the kidneys.
+                      </li>
+                    </ul>
+                  </div>
+                  <p className="font-roboto text-[18px] mt-[5px]">
+                    3.Inappropriate food and drink
+                  </p>
+                  <ul
+                    className="list-disc pl-[40px] mb-[50px]"
+                    style={{ lineHeight: 1.3 }}
+                  >
+                    <li className="text-[15px] font-roboto font-medium">
+                      High-sodium foods: Avoid or limit high-sodium foods such
+                      as processed meats, canned soups, fast food, chips, and
+                      salted snacks.
+                    </li>
+                    <li className="text-[15px] font-roboto font-medium">
+                      High-potassium foods: Limit or avoid high-potassium foods
+                      such as bananas, oranges, potatoes, tomatoes, avocados,
+                      and certain legumes.
+                    </li>
+                    <li className="text-[15px] font-roboto font-medium">
+                      High-phosphorus foods: Limit foods high in phosphorus,
+                      including dairy products, nuts, seeds, whole grains, and
+                      processed foods with phosphate additives.
+                    </li>
+                    <li className="text-[15px] font-roboto font-medium">
+                      Foods high in protein: Limit consumption of red meat,
+                      poultry, fish, and dairy products.
+                    </li>
+                    <li className="text-[15px] font-roboto font-medium">
+                      Fluid restrictions: In advanced stages of kidney disease,
+                      fluid intake may need to be limited to prevent fluid
+                      overload and swelling.
+                    </li>
+                    <li className="text-[15px] font-roboto font-medium">
+                      Carbonated beverages and sugary drinks
+                    </li>
+                    <li className="text-[15px] font-roboto font-medium">
+                      Alcohol
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              {/* genaral Advice */}
+              <div>
+                <p className="text-[34px] font-mono font-semibold underline mt-[30px]">
+                  General Advice
                 </p>
                 <ol
                   className="list-decimal pl-[40px] mb-[50px]"
@@ -446,32 +595,32 @@ function Result({
 
 export default Result;
 
-// weight > 80
-// 	"Try to maintain healthy body weight, consult a healthcare professional, adopt a balanced and nutritious diate plan, engage in regular physical activities."
+// "Blood tests:
+// 		Serum Creatinine
+// 		Blood Urea Nitrogen (BUN)
+// 		Estimated Glomerular Filtration Rate (eGFR)
+// 		Electrolyte Levels
+// 	Urine tests:
+// 		Urinalysis
+// 		Urine Albumin-to-Creatinine Ratio (ACR)
+// 	Imaging tests:
+// 		Ultrasound
+// 		CT Scan
+// 	Biopsy:
+// 		Kidney Biopsy
+// consult with the following healthcare professionals:
+// 	Primary Care Physician (PCP): Your primary care physician serves as the first point of contact for your healthcare needs.
+// 	Nephrologist: A nephrologist is a doctor who specializes in diagnosing and treating kidney diseases.
+// 	Registered Dietitian: A registered dietitian who specializes in kidney disease can provide valuable guidance on managing your diet to support kidney health.
+// 	Urologist: Urologists specialize in the urinary system, including the kidneys.
 
-// Family History of CKD == "Yes"
-// 	"When considering your family background, it is important to take proactive steps to maintain your kidney health."
+// Inappropriate food and drink:
+// 	High-sodium foods: Avoid or limit high-sodium foods such as processed meats, canned soups, fast food, chips, and salted snacks.
+// 	High-potassium foods: Limit or avoid high-potassium foods such as bananas, oranges, potatoes, tomatoes, avocados, and certain legumes.
+// 	High-phosphorus foods:  Limit foods high in phosphorus, including dairy products, nuts, seeds, whole grains, and processed foods with phosphate additives.
+// 	Foods high in protein: Limit consumption of red meat, poultry, fish, and dairy products.
+// 	Fluid restrictions: In advanced stages of kidney disease, fluid intake may need to be limited to prevent fluid overload and swelling.
+// 	Carbonated beverages and sugary drinks
+// 	Alcohol
 
-// Water intake < 2.7 and gender == "Female"
-// 	"The recommended daily water intake is 2.7 liters."
-
-// Water intake < 3.7 and gender == "Male"
-// 	"The recommended daily water intake is 3.7 liters."
-
-// Blood pressure == "High" or Diabetes == "High"
-// 	"Consult a healthcare professional(Blood pressure/Diabetes), reduce stress, maintain a healthy weight, follow a healthy diet, regular check-ups, take prescribed medication as directed."
-
-// Medications for diabetes/blood pressure == "Yes" or Antibiotic Consumption == "High"
-// 	"Limit sodium intake, monitor and control your blood pressure and blood sugar, maintain a healthy lifestyle, avoid nephrotoxic substances, stay hydrated, do blood test every three months(Serum Creatinine, Blood Urea Nitrogen (BUN), Estimated Glomerular Filtration Rate (eGFR))."
-
-// Alchohol consumption == "Yes"
-// 	"Quit the alcohol at all."
-
-// tobacco consumption == "Yes"
-// 	"Quit smoking at all."
-
-// Water resource == "Tank" or "Well water" or "river"
-// 	"When drinking water, filter it or use well-heated and filtered water."
-
-// Fertilizer == "High" or "Low"
-// 	"Follow safety practices when exposure to inorganic fertilizers, pesticides and weedicides."
+// "

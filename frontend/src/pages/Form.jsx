@@ -25,13 +25,13 @@ function Form() {
   const [tobacco, setTobacco] = useState("");
   const [artificialBeverage, setArtificialBeverage] = useState("");
   const [result, setResult] = useState("");
-
-  const submit = (e) => {
-    console.log("submit");
-  };
+  const [color, setColor] = useState("#FDE2E0");
 
   return (
-    <div className="bg-[#FDE2E0] min-h-screen">
+    <div
+      className={`bg-[${color}] min-h-screen`}
+      style={{ backgroundColor: `${color}` }}
+    >
       <div>
         <div className="w-full bg-white flex justify-center items-center font-roboto text-[30px] py-[15px] ">
           {page === 4 ? (
@@ -108,6 +108,7 @@ function Form() {
                 artificialBeverage={artificialBeverage}
                 result={result}
                 setResult={setResult}
+                setColor={setColor}
               />
             )}
           </div>
